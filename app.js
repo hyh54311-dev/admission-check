@@ -55,8 +55,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (rowId === targetId && rowName === targetName) {
                 found = true;
-                // 마지막 열이 선발여부('O' 또는 'X')
-                const status = String(row[row.length - 1]).trim().toUpperCase();
+                
+                // 구글 시트 gviz CSV 내보내기 시 끝에 빈 열("","")이 여러 개 붙는 현상 방지
+                // 뒤에서부터 처음으로 값이 있는 열을 찾거나, 확실한 인덱스(12번째 열)를 사용
+                let status = "";
+                for (let j = row.length - 1; j >= 0; j--) {
+                    if (row[j] && String(row[j]).trim() !== "") {
+                        status = String(row[j]).trim().toUpperCase();
+                        break;
+                    }
+                }
+
                 if (status === 'O') {
                     isPassed = true;
                 }
