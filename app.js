@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 구글 시트 CSV 내보내기 URL
     // (gviz/tq 를 사용하여 CORS 문제 없이 가져오기 유리함)
-    const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/1PjHn4e8oju-9otOZjqd4uX5Hl1glcdn3UtV-XaRnFYs/gviz/tq?tqx=out:csv";
+    const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/1EVwwxdU4rDRuqTHDSB-1cn5Bx85rqA_uo3disf4uVNo/gviz/tq?tqx=out:csv";
 
     form.addEventListener('submit', function(e) {
         e.preventDefault();
